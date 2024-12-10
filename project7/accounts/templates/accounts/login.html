@@ -1,44 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"> <!-- Line 2 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Line 3 -->
-    <title>Login Page</title> <!-- Line 4 -->
-    {% load static %} <!-- Load the static files at the top of the template (Line 5) -->
-    <link rel="stylesheet" href="{% static 'accounts/styles.css' %}?v={{ STATIC_VERSION }}"> <!-- Line 6 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'accounts/styles.css' %}">
 </head>
-<body> <!-- Line 7 -->
-    <div class="container"> <!-- Line 8 -->
-        <!-- Left Panel -->
-        <div class="left-panel"> <!-- Line 9 -->
-            <h2>Contact Us</h2> <!-- Line 10 -->
-            <p>Email: sergei@example.com</p> <!-- Line 11 -->
-            <p>Phone: +1 437 ...</p> <!-- Line 12 -->
-        </div> <!-- Line 13 -->
-
-        <!-- Right Panel -->
-        <div class="right-panel"> <!-- Line 14 -->
-            <h1>Login</h1> <!-- Line 15 -->
-            <form method="POST"> <!-- Line 16 -->
-                {% csrf_token %} <!-- Line 17 -->
-                <label for="nickname">Nickname:</label> <!-- Line 18 -->
-                <input type="text" id="nickname" name="nickname" placeholder="Enter your nickname" required> <!-- Line 19 -->
-                <label for="password">Password:</label> <!-- Line 20 -->
-                <input type="password" id="password" name="password" placeholder="Enter your password" required> <!-- Line 21 -->
-                <button type="submit">Login</button> <!-- Line 22 -->
-            </form> <!-- Line 23 -->
-        </div> <!-- Line 24 -->
-    </div> <!-- Line 25 -->
-
-    <!-- Add JavaScript snippet here (Line 26) -->
-    <script>
-        window.addEventListener('load', () => {
-            const links = document.querySelectorAll('link[rel="stylesheet"]');
-            links.forEach(link => {
-                const href = link.getAttribute('href');
-                link.setAttribute('href', href + '?v=' + new Date().getTime());
-            });
-        });
-    </script> <!-- End of script (Line 33) -->
-</body> <!-- Line 34 -->
-</html> <!-- Line 35 -->
+<body>
+    <div id="clock-container" style="position: absolute; top: 10px; left: 10px;">
+        <!-- Clocks will be dynamically inserted here -->
+    </div>
+    <div class="container">
+        <div class="left-panel">
+            <h2>Contact Us</h2>
+            <p>Email: sergeimn777@gmail.com</p>
+            <p>Phone: +1 437 26 11773</p>
+        </div>
+        <div class="right-panel">
+            <h1>Login</h1>
+            <form method="POST">
+                {% csrf_token %}
+                <label for="nickname">Nickname:</label>
+                <input type="text" id="nickname" name="nickname" placeholder="Enter your nickname" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+    <script src="{% static 'clock/clock.js' %}"></script>
+</body>
+</html>

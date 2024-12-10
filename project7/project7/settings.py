@@ -19,7 +19,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts',  # Custom app
+    'accounts',  # Your accounts app
+    'clock',     # Add the clock app here
 ]
 
 # Middleware
@@ -85,8 +86,10 @@ USE_TZ = True
 
 # Static files settings
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
-
+STATICFILES_DIRS = [BASE_DIR / 'static']  # Add global static directory here
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # Directory for collected static files during production
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
 
 

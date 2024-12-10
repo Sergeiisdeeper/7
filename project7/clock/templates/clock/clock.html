@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Clock</title>
+    <style>
+        #clock-container {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        #clock-container div {
+            margin: 5px 0;
+        }
+    </style>
+    <script src="{% static 'clock/clock.js' %}"></script>
+</head>
+<body>
+    <div id="clock-container">
+        <!-- Clocks will be dynamically inserted here -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+/* General body styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* Light gray background for global use */
+}
+
+/* Navigation bar (example global component) */
+.navbar {
+    background-color: #c91a4f; /* Dark blue */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.navbar a:hover {
+    background-color: #0d9c0d; /* Lighter blue for hover effect */
+}
+
+/* Shared button styles */
+button {
+    background-color: #13b120;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #04bb3b;
+}
