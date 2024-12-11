@@ -9,7 +9,8 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '472(&07069(-%(#ktp2w9)a5%+**w2oqqa)fhchyabx39faqd='
 DEBUG = True
-ALLOWED_HOSTS = []
+# Allowed hosts
+ALLOWED_HOSTS = ['https://blue-project-web-page.onrender.com', 'localhost']
 
 # Installed apps
 INSTALLED_APPS = [
