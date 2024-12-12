@@ -1,4 +1,6 @@
 import time
+import os
+
 
 # Add a timestamp to force static file refresh
 STATIC_VERSION = int(time.time())
@@ -7,10 +9,17 @@ from pathlib import Path
 
 # Base settings
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = '472(&07069(-%(#ktp2w9)a5%+**w2oqqa)fhchyabx39faqd='
-DEBUG = True
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'default-secret-key')
+DEBUG = False
 # Allowed hosts
-ALLOWED_HOSTS = ['https://blue-project-web-page.onrender.com', 'localhost']
+ALLOWED_HOSTS = [
+    os.getenv('DJANGO_ALLOWED_HOST', 'blue-project-web-page.onrender.com'),
+    'localhost',
+    '127.0.0.1'
+]
+
+
+
 
 # Installed apps
 INSTALLED_APPS = [
